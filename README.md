@@ -10,6 +10,7 @@ Collection of algorithm and data structure exercises from my computer science de
 - Generic List ADT — interface + static array-backed implementation
 - Insertion Sort
 - Binary Search
+- Circular Linked List — chained nodes, pointer manipulation and removal (Josephus-style elimination game)
 
 ## How to run
 
