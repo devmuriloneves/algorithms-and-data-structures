@@ -63,6 +63,17 @@ public class LemonGame {
      * Prints the participants currently in the circle, in order.
      */
     public void printCircle() {
+        if (head == null) {
+            System.out.println("The circle is empty.");
+            return;
+        } else {
+            System.out.println("Participants in the circle:");
+            Node current = head;
+            do {
+                System.out.println(" - " + current.getData().getName());
+                current = current.getNext();
+            } while (current != head);
+        }
         // TODO: traverse the circular list from the head and print each participant
     }
 }
