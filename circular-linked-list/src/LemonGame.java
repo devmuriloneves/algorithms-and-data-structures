@@ -43,8 +43,16 @@ public class LemonGame {
      * @return the position where the object stopped
      */
     public int passObject(int x) {
-        // TODO: walk x steps around the circle and return the position where it stops
-        return 0;
+        int position = 1;
+        Node node = head;
+        for (int i = 0; i < x; i++) {
+            node = node.getNext();
+            if (position == size)
+                position = 1;
+            else
+                position++;
+        }
+        return position;
     }
 
     /**
@@ -55,8 +63,30 @@ public class LemonGame {
      * @return the winner once a single participant remains, otherwise null
      */
     public Person removePosition(int x) {
-        // TODO: remove the node at position x, update the pointers/head and the winner logic
-        return null;
+        if (x == 1) {
+            Node oldHead = head;
+            head = head.getNext();
+            size--;
+            Node node = head;
+            while (node.getNext() != oldHead) {
+                node = node.getNext();
+            }
+            node.setNext(head);
+            if (size == 1)
+                return head.getData();
+            else
+                return null;
+        }
+        Node previousNode = head;
+        for (int i = 0; i < x - 2; i++) {
+            previousNode = previousNode.getNext();
+        }
+        previousNode.setNext(previousNode.getNext().getNext());
+        size--;
+        if (size == 1)
+            return head.getData();
+        else
+            return null;
     }
 
     /**
@@ -74,6 +104,5 @@ public class LemonGame {
                 current = current.getNext();
             } while (current != head);
         }
-        // TODO: traverse the circular list from the head and print each participant
     }
 }

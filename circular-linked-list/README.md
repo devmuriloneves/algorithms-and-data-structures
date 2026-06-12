@@ -34,6 +34,4 @@ java Main
 
 ## Status
 
-🚧 Work in progress — the structure and its constructor are implemented.
-The simulation methods (`passObject`, `removePosition`, `printCircle`) are
-still being developed.
+Complete — all methods are implemented and the simulation runs end-to-end.
